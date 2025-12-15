@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SITARA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Design Variables based on the provided image */
+        :root {
+            --primary-color: #8B3A3A; /* Deep Red/Brown for action */
+            --secondary-color: #f9f7f0; /* Soft Cream background */
+            --text-color-dark: #333;
+            --text-color-light: #555;
+            --background-dark: #EDE8D3; /* Light, warm khaki/cream */
+            --font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color-dark);
+            background-color: var(--secondary-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Utility Classes */
+        .max-width {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* New Logo Image Styling */
+        .nav-logo {
+            height: 35px; 
+            margin-right: 0;
+            vertical-align: middle;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
+
+        /* --- Header and Navigation --- */
+        header {
+            background: var(--secondary-color);
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .logo-container {
+            /* This div now only wraps the image */
+            font-size: 0; 
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color-light);
+            font-weight: 400;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Contribute Button in Nav */
+        .btn-contribute {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            padding: 8px 18px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-left: 20px;
+        }
+
+        /* --- Buttons --- */
+        .btn-action {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            display: inline-block;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a2c2c; /* Slightly darker shade */
+        }
+        
+        .btn-secondary {
+            background-color: var(--background-dark);
+            color: var(--text-color-dark);
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        
+        .btn-secondary:hover {
+             background-color: #ddd;
+        }
+
+        /* --- Main Sections and General Headings --- */
+        .section-padding {
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h3 {
+             color: var(--primary-color);
+             font-weight: 400;
+             margin-bottom: 5px;
+        }
+        
+        /* --- Forms & Inputs --- */
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            font-size: 1em;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background-color: var(--text-color-dark);
+            color: white;
+            padding: 30px 5%;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Social Media Icon Styling */
+        .social-links a {
+            color: white; /* Default color on dark footer */
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 1.5em; 
+            opacity: 0.8;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--primary-color); /* Highlight with theme color on hover */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="max-width">
+            <nav>
+                <a href="index.html" class="logo-container">
+                    <img src="sitara_logo.png" alt="SITARA NGO Logo" class="nav-logo">
+                </a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#founder">Founder's Story</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="contribute.html">Contribute</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contribute.html" class="btn-action btn-contribute">Contribute</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-padding" style="background-color: var(--secondary-color);">
+        <div class="max-width">
+            <h1 style="font-size: 3em; margin-bottom: 20px; color: var(--primary-color);">Get in Touch</h1>
+            <p style="font-size: 1.2em; color: var(--text-color-dark); max-width: 900px; margin: 0 auto 40px;">
+                We value communication and are here to answer all your questions, discuss partnerships, or receive your valuable feedback.
+            </p>
+            
+            <div class="contribute-wrapper" style="max-width: 600px; margin: 0 auto;">
+                 <h2 style="font-size: 1.8em; margin-bottom: 20px; text-align: left;">Send Us a Message</h2>
+                 <form action="#" method="POST" class="contact-form" style="padding: 20px; background-color: white; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                     <input type="text" name="name" placeholder="Your Name" class="form-input" required>
+                     <input type="email" name="email" placeholder="Your Email" class="form-input" required>
+                     <input type="text" name="subject" placeholder="Subject" class="form-input">
+                     <textarea name="message" placeholder="Your detailed message..." class="form-input" style="min-height: 150px;" required></textarea>
+                     <button type="submit" class="btn-action btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+                
+                <div style="margin-top: 40px; text-align: left; padding: 25px; border: 1px solid #ccc; background-color: var(--background-dark); border-radius: 5px;">
+                    <h3 style="font-weight: 700; color: var(--text-color-dark); margin-bottom: 10px;">Our Details</h3>
+                    <p style="font-size: 0.9em; line-height: 1.8; color: var(--text-color-dark);">
+                        **Office Address:** [Your NGO Location Here - 123 Hope Lane, City, Country]<br>
+                        **Phone:** [+91 XXXXX XXXXX]<br>
+                        **Email:** [contact@sitara.org]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="max-width footer-content">
+            <p>&copy; 2024 SITARA. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/sitara.fund?igsh=MTlmMGpiMXF2Z3ZnNQ==" target="_blank" aria-label="Follow SITARA on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

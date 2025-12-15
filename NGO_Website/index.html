@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITARA - Every Life Deserves to Shine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Design Variables based on the provided image */
+        :root {
+            --primary-color: #8B3A3A; /* Deep Red/Brown for action */
+            --secondary-color: #f9f7f0; /* Soft Cream background */
+            --text-color-dark: #333;
+            --text-color-light: #555;
+            --background-dark: #EDE8D3; /* Light, warm khaki/cream */
+            --font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color-dark);
+            background-color: var(--secondary-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Utility Classes */
+        .max-width {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* New Logo Image Styling */
+        .nav-logo {
+            height: 35px; /* Slightly larger image */
+            margin-right: 0; /* Removed space as text is gone */
+            vertical-align: middle;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
+
+        /* --- Header and Navigation --- */
+        header {
+            background: var(--secondary-color);
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .logo-container {
+            /* This div now only wraps the image */
+            font-size: 0; /* Hides any rogue spaces */
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color-light);
+            font-weight: 400;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Contribute Button in Nav */
+        .btn-contribute {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            padding: 8px 18px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-left: 20px;
+        }
+
+        /* --- Buttons --- */
+        .btn-action {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            display: inline-block;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a2c2c; /* Slightly darker shade */
+        }
+        
+        .btn-secondary {
+            background-color: var(--background-dark);
+            color: var(--text-color-dark);
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        
+        .btn-secondary:hover {
+             background-color: #ddd;
+        }
+
+        /* --- Main Sections and General Headings --- */
+        .section-padding {
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h3 {
+             color: var(--primary-color);
+             font-weight: 400;
+             margin-bottom: 5px;
+        }
+        
+        /* Hero Image/Video Area */
+        .hero-banner {
+            background: url('hero-children.jpg') no-repeat center center/cover; /* Placeholder: Add your children image here */
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-quote-box {
+            position: relative;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.4); 
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-quote-box blockquote {
+            font-style: italic;
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Main Text Section */
+        .intro-text-section {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        
+        .intro-text-section h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .intro-text-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: var(--text-color-light);
+        }
+        
+        /* --- Founder's Story Section Styling --- */
+        .founder-story-section {
+            padding: 80px 5%;
+            background-color: white;
+            text-align: left;
+        }
+
+        .founder-story-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .founder-text {
+            flex: 2;
+        }
+        
+        .founder-image-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .founder-image-container img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .founder-text p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: var(--text-color-light);
+        }
+        
+        .founder-text h2 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        /* --- Projects Grid --- */
+        .about-projects-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            padding: 60px 5%;
+            background-color: var(--secondary-color);
+        }
+        
+        .about-section-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .project-section-content {
+            flex: 2;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        
+        .card-image-placeholder {
+            height: 120px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8em;
+        }
+        
+        .card-content {
+            padding: 15px;
+        }
+        
+        .card-content h4 {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        /* --- Team Section --- */
+        .team-section {
+             background-color: var(--background-dark);
+             padding-bottom: 30px;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 180px;
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background-color: var(--text-color-dark);
+            color: white;
+            padding: 30px 5%;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Social Media Icon Styling */
+        .social-links a {
+            color: white; /* Default color on dark footer */
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 1.5em; 
+            opacity: 0.8;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--primary-color); /* Highlight with theme color on hover */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="max-width">
+            <nav>
+                <a href="index.html" class="logo-container">
+                    <img src="sitara_logo.png" alt="SITARA NGO Logo" class="nav-logo">
+                </a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#founder">Founder's Story</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="contribute.html">Contribute</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contribute.html" class="btn-action btn-contribute">Contribute</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="hero-banner">
+            <div class="hero-quote-box">
+                <blockquote>"The purpose of human life is to serve and show compassion and the will to help others."</blockquote>
+                <a href="contribute.html" class="btn-action btn-primary" style="margin-top: 15px;">Donate Now</a>
+            </div>
+        </section>
+        
+        <section class="intro-text-section">
+            <div class="max-width">
+                <h1>SITARA: Every Life Deserves to Shine</h1>
+                <p>To uplift communities, support the vulnerable, and inspire collective action toward meaningful social change.</p>
+                <a href="join.html" class="btn-action btn-secondary">Join the Movement</a>
+            </div>
+        </section>
+        
+        <section id="founder" class="founder-story-section">
+            <div class="max-width founder-story-content">
+                <div class="founder-text">
+                    <h2>Founder's Story</h2>
+                    <p>Sitara began with a question I often asked myself: What if my purpose in life was to help others rise?</p>
+                    <p>From a young age, I carried a strong desire to do something meaningful for society—not someday, but now. As I grew, I became more aware of the inequalities around me, the voices that went unheard, and the silent struggles faced by people every day. I realized that waiting for change was not enough; change needed intention, courage, and action.</p>
+                    <p>The name Sitara, meaning **star**, holds deep meaning for me. A star represents hope, direction, and light—even in darkness. I believed that if one person could choose to shine with purpose, it could inspire many others to find their own light. That belief became the foundation of Sitara.</p>
+                    <p>What started as a personal dream slowly transformed into a mission. I wanted to create a space where compassion turns into action, where help reaches those who truly need it, and where people are empowered rather than dependent.</p>
+                    <p>The journey has not been easy. There were moments of doubt, limited resources, and challenges that tested my resolve. But my commitment to society and my belief in collective strength kept me moving forward. Sitara was built on determination, integrity, and the idea that even small efforts can create lasting impact.</p>
+                    <p>**Today, Sitara reflects everything I stand for: inclusivity, empathy, and action. Every initiative, every collaboration, and every life we touch reminds me why this journey began.**</p>
+                    <p style="font-style: italic;">This story is still being written—by every volunteer, supporter, and individual who believes in a kinder, more empowered world. Because when one star chooses to shine, many others find the courage to glow.</p>
+                    <a href="about.html" class="btn-action btn-primary" style="margin-top: 15px;">Learn More About Us</a>
+                </div>
+                <div class="founder-image-container">
+                    <img src="founder_placeholder.jpg" alt="Sitara Founder">
+                    <p style="font-weight: 700; color: var(--primary-color);">[Founder Name, Title]</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="about-projects-grid" style="background-color: var(--background-dark);">
+            <div class="max-width" style="display: flex; width: 100%;">
+                <div class="about-section-content">
+                    <h3 class="section-title">A Message From SITARA:</h3>
+                    <p style="font-size: 0.9em; color: var(--text-color-light);">
+                        Sitara is driven by the belief that every life deserves the chance to shine. We are committed to upholding the vulnerable and inspiring collective action.
+                    </p>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: var(--text-color-light);">
+                        <a href="about.html" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">Read Our Full Mission & History...</a>
+                    </p>
+                </div>
+                
+                <div class="project-section-content">
+                    <h3 class="section-title">Projects:</h3>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-image-placeholder">Education Placeholder</div>
+                            <div class="card-content">
+                                <h4>Education</h4>
+                                <p style="font-size: 0.8em; color: var(--text-color-light);">We provide schools, books, and scholarships to ensure every child has access to learning.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-placeholder">Health Placeholder</div>
+                            <div class="card-content">
+                                <h4>Health</h4>
+                                <p style="font-size: 0.8em; color: var(--text-color-light);">Supporting clinics, mobile doctors, and vaccination drives in remote areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="team" class="section-padding team-section">
+            <div class="max-width">
+                <h2>Our Leadership</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="placeholder_ceo.jpg" alt="Jane Doe">
+                        <h4>Jane Doe</h4>
+                        <p>Founder and CEO</p>
+                        <p style="font-size: 0.8em;">"To lead with integrity and compassion."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="placeholder_cfo.jpg" alt="Priya Sharra">
+                        <h4>Priya Sharra</h4>
+                        <p>Finance Director</p>
+                        <p style="font-size: 0.8em;">"Ensuring transparency for our supporters."</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="placeholder_field.jpg" alt="Priya Sharra">
+                        <h4>Priya Sharra</h4>
+                        <p>Head of Field Operations</p>
+                        <p style="font-size: 0.8em;">"On the ground, making a tangible difference."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="max-width footer-content">
+            <p>&copy; 2024 SITARA. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/sitara.fund?igsh=MTlmMGpiMXF2Z3ZnNQ==" target="_blank" aria-label="Follow SITARA on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SITARA - Our Mission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Design Variables based on the provided image */
+        :root {
+            --primary-color: #8B3A3A; /* Deep Red/Brown for action */
+            --secondary-color: #f9f7f0; /* Soft Cream background */
+            --text-color-dark: #333;
+            --text-color-light: #555;
+            --background-dark: #EDE8D3; /* Light, warm khaki/cream */
+            --font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color-dark);
+            background-color: var(--secondary-color);
+            scroll-behavior: smooth;
+        }
+
+        /* Utility Classes */
+        .max-width {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* New Logo Image Styling */
+        .nav-logo {
+            height: 35px; 
+            margin-right: 0;
+            vertical-align: middle;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
+
+        /* --- Header and Navigation --- */
+        header {
+            background: var(--secondary-color);
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .logo-container {
+            /* This div now only wraps the image */
+            font-size: 0; 
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color-light);
+            font-weight: 400;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Contribute Button in Nav */
+        .btn-contribute {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            padding: 8px 18px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-left: 20px;
+        }
+
+        /* --- Buttons --- */
+        .btn-action {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            display: inline-block;
+            font-size: 1em;
+            text-transform: uppercase;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a2c2c; /* Slightly darker shade */
+        }
+        
+        .btn-secondary {
+            background-color: var(--background-dark);
+            color: var(--text-color-dark);
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+        
+        .btn-secondary:hover {
+             background-color: #ddd;
+        }
+
+        /* --- Main Sections and General Headings --- */
+        .section-padding {
+            padding: 80px 5%;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h3 {
+             color: var(--primary-color);
+             font-weight: 400;
+             margin-bottom: 5px;
+        }
+
+        /* --- Forms & Inputs (Included for consistency) --- */
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            font-size: 1em;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            background-color: var(--text-color-dark);
+            color: white;
+            padding: 30px 5%;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Social Media Icon Styling */
+        .social-links a {
+            color: white; /* Default color on dark footer */
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 1.5em; 
+            opacity: 0.8;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--primary-color); /* Highlight with theme color on hover */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="max-width">
+            <nav>
+                <a href="index.html" class="logo-container">
+                    <img src="sitara_logo.png" alt="SITARA NGO Logo" class="nav-logo">
+                </a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#founder">Founder's Story</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="contribute.html">Contribute</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contribute.html" class="btn-action btn-contribute">Contribute</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-padding" style="text-align: left; background-color: white;">
+        <div class="max-width">
+            <h1 style="font-size: 3em; margin-bottom: 30px; color: var(--primary-color); text-align: center;">About Us: SITARA</h1>
+            
+            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 30px; font-weight: bold; color: var(--text-color-dark);">
+                Sitara is a social welfare organization driven by a simple yet powerful belief: every life deserves the chance to shine.
+            </p>
+            
+            <div style="display: flex; gap: 40px;">
+                <div style="flex: 2;">
+                    <p style="line-height: 1.8; margin-bottom: 20px; color: var(--text-color-light);">
+                        Founded with the vision of creating a more compassionate, inclusive, and empowered society, Sitara works for everyone—across age, gender, background, and circumstance. We exist to uplift communities, support the vulnerable, and inspire collective action toward meaningful social change.
+                    </p>
+                    <p style="line-height: 1.8; margin-bottom: 20px; color: var(--text-color-light);">
+                        At Sitara, we see challenges not as barriers, but as opportunities to build strength, dignity, and hope. Whether it is through awareness, support initiatives, community programs, or collaborative efforts, our goal is to turn empathy into action and action into lasting impact.
+                    </p>
+                </div>
+                
+                <div style="flex: 1; background-color: var(--background-dark); padding: 25px; border-radius: 5px; border-left: 3px solid var(--primary-color);">
+                    <h2 style="font-size: 1.8em; color: var(--text-color-dark); margin-bottom: 15px; text-align: left;">Our Mission</h2>
+                    <p style="font-style: italic; color: var(--text-color-light);">
+                        To empower individuals and communities by promoting equality, well-being, and opportunity—so that every person can rise with confidence and purpose.
+                    </p>
+                    <a href="join.html" class="btn-action btn-primary" style="margin-top: 25px;">Join Our Movement</a>
+                </div>
+            </div>
+            
+            <h2 style="font-size: 2em; color: var(--primary-color); margin-top: 50px; margin-bottom: 20px; text-align: center;">Our Approach</h2>
+            <p style="line-height: 1.8; text-align: center; color: var(--text-color-light); max-width: 900px; margin: 0 auto;">
+                Sitara focuses on community-driven initiatives that address real needs on the ground. By partnering with volunteers, supporters, and like-minded organizations, we amplify our reach and ensure that help reaches where it matters most. Every step we take is guided by transparency, integrity, and a deep sense of responsibility toward the communities we serve.
+            </p>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="max-width footer-content">
+            <p>&copy; 2024 SITARA. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/sitara.fund?igsh=MTlmMGpiMXF2Z3ZnNQ==" target="_blank" aria-label="Follow SITARA on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
